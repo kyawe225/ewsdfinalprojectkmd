@@ -1,0 +1,737 @@
+/* ===== RESET PROBLEMATIC STYLES ===== */
+/* Reset meeting card styles */
+.meeting-card {
+  position: relative;
+  width: 100%;
+  max-width: 1038px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+  padding: 16px;
+}
+
+.meeting-card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Reset content container */
+mat-card-content {
+  padding: 24px;
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== MEETING INFO ROWS ===== */
+/* Date-Time-Type row (first row) */
+.date-time-type-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E5E7EB;
+  align-items: center;
+}
+
+.date-section,
+.time-section,
+.type-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.date-section {
+  justify-content: flex-start;
+}
+
+.time-section {
+  justify-content: center;
+}
+
+.type-section {
+  justify-content: flex-end;
+}
+
+/* Regular info rows */
+.meeting-info-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+/* ===== LABELS AND VALUES ===== */
+.info-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4B5563;
+  margin-right: 5px; /* Changed from 8px to 5px */
+  min-width: 120px; /* Consistent width for alignment */
+}
+
+.info-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #111827;
+  flex: 1;
+}
+
+.date-section .info-label,
+.time-section .info-label,
+.type-section .info-label {
+  margin-right: 5px; /* Ensure 5px spacing in the first row too */
+}
+
+.meeting-type-text {
+  font-weight: 400; /* Change from 500 (semi-bold) to 400 (normal) */
+  margin-left: 5px;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Override the colored types */
+.meeting-type-text.online,
+.meeting-type-text.offline,
+.meeting-type-text.campus {
+  color: #111827; /* Keep the text black */
+  font-weight: 400; /* Ensure normal font weight for all types */
+}
+
+/* For items with icons, ensure the spacing is also 5px */
+.card-detail, 
+.meeting-detail {
+  gap: 5px; /* Update if you have elements with gap property */
+}
+
+/* ===== RESCHEDULE BUTTON ===== */
+/* Meeting actions container */
+.meeting-actions {
+  display: flex;
+  justify-content: flex-start; /* Left alignment */
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+  width: 100%;
+}
+
+/* Reschedule button */
+.reschedule-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Custom button styling for reschedule button */
+.reschedule-button button {
+  background-color: white;
+  color: #007BFF; /* Bright blue text */
+  padding: 8px 24px;
+  border-radius: 9999px; /* Fully rounded corners (pill shape) */
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none; /* No border */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  outline: none; /* Remove focus outline */
+  text-transform: none; /* Prevent uppercase text */
+  letter-spacing: normal;
+  min-width: 120px; /* Ensure minimum width */
+  height: 36px; /* Consistent height */
+}
+
+.reschedule-button button:hover {
+  background-color: #f9fafb; /* Very subtle gray on hover */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.12), 0px 2px 3px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow on hover */
+}
+
+.reschedule-button mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+
+/* Button for join meeting */
+.reschedule-button button[color="primary"] {
+  background-color: #2196F3;
+}
+
+.reschedule-button button[color="primary"]:hover {
+  background-color: #1976D2;
+}
+
+/* ===== MEETING HEADER ===== */
+.meeting-header {
+  margin-bottom: 16px;
+}
+
+.meeting-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.meeting-header-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-bottom: 8px; /* adjust line between detail row and header */
+  padding-bottom: 0; /* Remove any bottom padding */
+  border-bottom: 1px solid #eee;
+  line-height: 1.6;
+}
+
+.meeting-header-row > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.meeting-header-row div {
+  flex: 1 1 30%;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+/* ===== MEETING DETAILS ===== */
+.meeting-details {
+  font-size: 14px;
+  margin-bottom: 50px; /* Make space for the button */
+  margin-top: 0; /* Remove any top margin */
+  padding-top: 0; /* Remove any top padding */
+  line-height: 1.6;
+}
+
+.meeting-details > div:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.meeting-details div {
+  margin-bottom: 8px;
+}
+
+.meeting-details a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.meeting-details a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 767px) {
+  /* Mobile: stack date-time-type sections vertically */
+  .date-time-type-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Slightly larger gap between sections */
+  }
+  
+  .date-section, 
+  .time-section, 
+  .type-section {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  /* Mobile: make label widths consistent */
+  .info-label {
+    min-width: 100px;
+    margin-right: 5px; /* Maintain 5px spacing on mobile */
+  }
+  
+  /* Full width button on mobile */
+  .reschedule-button {
+    width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .info-label {
+    min-width: 90px;
+    margin-right: 5px; /* Maintain 5px spacing on small phones */
+  }
+}
+
+/* ===== COMPLETELY NEW FILTER SECTION WITH FIXED POSITIONING ===== */
+/* First, remove or comment out ALL previous filter-related styles */
+
+/* Now add these new styles: */
+.filter-section-container {
+  position: relative;
+  width: 100%;
+  height: 60px; /* Fixed height for the container to reserve space */
+  margin-bottom: 30px; /* Space below the filter */
+}
+
+.filter-section-inner {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the left */
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  min-width: 180px; /* Fixed width for all titles */
+}
+
+.filter-dropdown {
+  margin-left: 10px;
+  position: relative;
+  width: 150px; /* Fixed width for dropdown */
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  outline: none;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px; /* Space for custom arrow */
+  cursor: pointer;
+  width: 100%; /* Use full width of container */
+}
+
+.filter-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Make sure clicks pass through */
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .filter-section-container {
+    height: 90px; /* More height for stacked layout */
+  }
+  
+  .filter-section-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-dropdown {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .filter-select {
+    width: 100%;
+  }
+}
+
+/* No meetings container */
+.no-meetings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.no-meetings-container mat-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.no-meetings-container p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Container with fixed layout */
+.filter-section-container {
+  position: relative;
+  width: 100%;
+  height: 60px; /* Fixed height to maintain layout */
+  margin-bottom: 30px;
+}
+
+/* Inner container with flex layout */
+.filter-section-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 10px 0;
+}
+
+/* Fixed-width container for title */
+.filter-title-container {
+  flex: 0 0 200px; /* Fixed width: don't grow, don't shrink, stay at 200px */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Title styling */
+.filter-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fixed-width container for dropdown */
+.filter-dropdown {
+  flex: 0 0 150px; /* Fixed width */
+  position: relative;
+}
+
+/* Select styling */
+.filter-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+/* Arrow styling */
+.filter-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #666;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  .filter-section-container {
+    height: auto; /* Allow height to adjust */
+  }
+  
+  .filter-section-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  
+  .filter-title-container,
+  .filter-dropdown {
+    flex-basis: auto;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Enhanced responsive styles specifically for iPhone SE */
+@media (max-width: 375px) {
+  /* Meeting card adjustments */
+  .meeting-card {
+    padding: 12px;
+    margin: 0 auto 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  mat-card-content {
+    padding: 16px;
+  }
+  
+  /* Date-Time-Type row spacing */
+  .date-time-type-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+  
+  /* Ensure all sections are full width and properly aligned */
+  .date-section, 
+  .time-section, 
+  .type-section {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+  }
+  
+  /* Adjust label width for small screens */
+  .info-label {
+    min-width: 80px;
+    margin-right: 5px;
+    font-size: 13px;
+  }
+  
+  .info-value {
+    font-size: 13px;
+    max-width: calc(100% - 85px);
+    word-break: break-word;
+  }
+  
+  /* Meeting info rows */
+  .meeting-info-row {
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  
+  /* More space for action buttons */
+  .meeting-actions {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  /* Reschedule button adjustments */
+  .reschedule-button {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .reschedule-button button {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  /* Header adjustments */
+  .meeting-header {
+    margin-bottom: 12px;
+  }
+  
+  .meeting-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  
+  .meeting-header-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+  
+  .meeting-header-row div {
+    flex: unset;
+    width: 100%;
+    margin-right: 0;
+    white-space: normal;
+  }
+  
+  /* Fix for meeting details */
+  .meeting-details {
+    font-size: 13px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Filter section container adjustments */
+  .filter-section-container {
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .filter-title-container {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .filter-title {
+    font-size: 16px;
+  }
+  
+  .filter-dropdown {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .filter-select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  /* No meetings container */
+  .no-meetings-container {
+    padding: 30px 15px;
+  }
+  
+  .no-meetings-container mat-icon {
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+    margin-bottom: 12px;
+  }
+  
+  .no-meetings-container p {
+    font-size: 14px;
+  }
+  
+  /* Ensure overflow handling on all containers */
+  .meeting-card,
+  mat-card-content,
+  .date-time-type-row,
+  .meeting-info-row,
+  .meeting-header,
+  .meeting-header-row,
+  .meeting-details,
+  .meeting-actions,
+  .filter-section-container,
+  .filter-section-inner,
+  .filter-title-container,
+  .filter-dropdown,
+  .no-meetings-container {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    box-sizing: border-box;
+  }
+  
+  /* Handle text overflow */
+  .meeting-title,
+  .info-label,
+  .info-value,
+  .meeting-type-text,
+  .filter-title,
+  .no-meetings-container p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Ensure body doesn't scroll horizontally */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Additional optimizations for even smaller screens */
+@media (max-width: 320px) {
+  .meeting-card {
+    padding: 10px;
+  }
+  
+  mat-card-content {
+    padding: 12px;
+  }
+  
+  .info-label {
+    min-width: 70px;
+    font-size: 12px;
+  }
+  
+  .info-value {
+    font-size: 12px;
+  }
+  
+  .meeting-title {
+    font-size: 15px;
+  }
+  
+  .filter-title {
+    font-size: 15px;
+  }
+}
+
+/* Height considerations for iPhone SE */
+@media (max-height: 667px) and (max-width: 375px) {
+  .meeting-card {
+    margin-bottom: 12px;
+  }
+  
+  .filter-section-container {
+    margin-bottom: 16px;
+  }
+  
+  .date-time-type-row {
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .meeting-actions {
+    padding-top: 12px;
+    margin-top: 16px;
+  }
+  
+  /* Vertical spacing reduction */
+  .meeting-info-row {
+    margin-bottom: 8px;
+  }
+}
+
+/* ===== NEW FILTER ICON STYLES ===== */
+.filter-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensures clicks pass through to the select element */
+}
+
+/* Make sure the parent has proper positioning */
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Remove default select arrow in most browsers */
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px; /* Make space for the icon */
+}

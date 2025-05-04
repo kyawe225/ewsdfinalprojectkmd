@@ -1,0 +1,75 @@
+<div class="managment_container container">
+  <div class="row">
+    <div class="search_container col-12">
+      <div class="search-bar mb-3">
+        <input
+          type="text"
+          placeholder="Search by Student Name or Email"
+          (input)="searchStudent()"
+          [(ngModel)]="searchValue"
+          class="form-control"
+          [disabled]="isLoading"
+        />
+      </div>
+      <h2 class="title">{{ title }}</h2>
+
+      <!-- Skeleton Loading or Content -->
+      <div *ngIf="isLoading; else content">
+        <!-- Skeleton for Filter Section -->
+        <div class="filter-section">
+          <div class="skeleton-filter">
+            <div class="skeleton-text medium"></div>
+          </div>
+        </div>
+
+        <!-- Skeleton for Tabs -->
+        <div class="skeleton-tabs">
+          <div class="skeleton-tab">
+            <div class="skeleton-text short"></div>
+            <div class="skeleton-text short"></div>
+          </div>
+        </div>
+
+        <!-- Skeleton for Meeting Cards -->
+        <app-skeleton
+          type="card"
+          [rows]="3"
+          [width]="'100%'"
+          [height]="'auto'"
+        ></app-skeleton>
+      </div>
+      <ng-template class="student_grid" #content>
+        <div class="student_grid">
+          <mat-card
+            *ngFor="let student of filteredStudents"
+            class="student-card"
+          >
+            <mat-card-content>
+              <div class="student-info">
+                <h3>{{ student.name }}</h3>
+                <p>{{ student.email }}</p>
+                <div class="icons">
+                  <div class="icon_gp">
+                    <mat-icon (click)="navigateToMeetings(student.id)"
+                      >forum</mat-icon
+                    >
+                    <mat-icon (click)="navigateToMeetings(student.id)"
+                      >calendar_today</mat-icon
+                    >
+                    <mat-icon (click)="navigateToMeetings(student.id)"
+                      >edit_note</mat-icon
+                    >
+                  </div>
+
+                  <a (click)="navigateToMeetings(student.id)" class="more-link"
+                    >More</a
+                  >
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

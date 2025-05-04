@@ -1,0 +1,207 @@
+/********** Login Container **********/
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left {
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  flex: 50%;
+  position: relative;
+}
+
+.background-container {
+  background: url("/assets/books.jpg") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Right Side - Form */
+.right {
+  flex: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+}
+.login-form-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Welcome Text and Subtext */
+.welcome-text {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-subtext {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+/* Form Styling */
+.login-form {
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+mat-form-field .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+mat-form-field .mat-form-field-underline {
+  height: 1px;
+}
+
+mat-form-field.mat-focused .mat-form-field-underline {
+  background-color: #007bff;
+}
+
+/* Password Toggle Button */
+mat-icon-button {
+  color: #6c757d !important;
+  border: none !important;
+}
+
+mat-icon-button:hover {
+  color: #007bff !important;
+}
+.form_field ::placeholder {
+  background-color: transparent !important;
+}
+/* Login Button */
+.login-button {
+  background-color: #0099ff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 4;
+}
+.hide_button {
+  border: none;
+  margin: 0.3rem;
+  background: none;
+}
+.login-button:hover {
+  background-color: #372eea;
+}
+
+/* Bottom Wave */
+.bottom-wave {
+  position: absolute;
+  bottom: -8px;
+  width: 50%;
+  height: auto;
+  right: 0;
+  overflow: hidden;
+}
+/* Responsive Design */
+@media only screen and (max-width: 1200px) {
+  .right .login-form-container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .login-container {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .left {
+    width: 100%;
+    max-height: 33.33vh;
+    overflow: hidden;
+  }
+
+  .right {
+    width: 100%;
+    max-height: 66.67vh;
+    border-radius: 20px;
+  }
+
+  .right .login-form-container {
+    width: 80%;
+    border-radius: 20px; /* Rounded corners for tablet */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .left {
+    max-height: 25vh; /* Mobile: 20% height */
+  }
+
+  .right {
+    max-height: 75vh;
+  }
+
+  .right .login-form-container {
+    width: 80%;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .left {
+    max-height: 20vh;
+  }
+
+  .right {
+    max-height: 80vh;
+  }
+
+  .right .login-form-container {
+    width: 95%;
+    padding: 30px 20px;
+  }
+  .welcome-text {
+    font-size: 2.2rem;
+  }
+  .login-subtext {
+    font-size: 1.2rem;
+  }
+  .login-form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .bottom-wave {
+    width: 100%;
+    right: 0;
+  }
+}

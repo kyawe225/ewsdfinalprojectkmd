@@ -1,0 +1,128 @@
+/* Mobile-first approach */
+
+.exc_title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+}
+
+.admin-report-container {
+  padding: clamp(0.5rem, 2vw, 1rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  margin: clamp(1rem, 3vw, 1.5rem) 0;
+  justify-content: flex-start;
+}
+
+.nav-button {
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.25rem);
+  border: 2px solid #fff;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.nav-button:hover {
+  background-color: #3381cf;
+}
+
+.report-title {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+}
+
+.chart-container {
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  height: clamp(200px, 50vw, 400px);
+  position: relative;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  font-weight: bold;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.top-search-bar {
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+}
+
+.top-search-bar input {
+  width: 100%;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.top-search-bar input::placeholder {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .admin-report-container {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: clamp(0.25rem, 1vw, 0.5rem);
+  }
+
+  .nav-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .chart-container {
+    height: clamp(150px, 40vw, 300px);
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-button {
+    width: auto;
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .admin-report-container {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .chart-container {
+    height: clamp(250px, 45vw, 400px);
+  }
+
+  .nav-button {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .admin-report-container {
+    padding: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .chart-container {
+    height: clamp(300px, 40vw, 450px);
+  }
+}

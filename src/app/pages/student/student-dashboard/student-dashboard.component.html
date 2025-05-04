@@ -1,0 +1,113 @@
+<!-- Main content container without fixed header (since sidebar layout handles that) -->
+<div class="dashboard-container">
+  <!-- Replace the manual header with the StudentHeaderComponent -->
+  <app-student-header [userName]="user.name || ''" [lastLoginRaw]="user.lastLogin || ''" [showWelcome]="true"
+    [isMeetingsMode]="false" [fixedPosition]="false">
+  </app-student-header>
+
+  <!-- Main page title -->
+  <div class="main-title"></div>
+  <p class="tutor-card-title">{{ user.name }}'s Personal Tutor</p>
+  <!-- Cards Row with wider cards -->
+  <div class="wider-cards-container">
+    <!-- User Card -->
+    <mat-card class="stats-card user-card wider-card">
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="card-title">
+          <img src="assets/user_icon.png" alt="User Icon" class="user-icon" />
+          <span class="status-value"></span>
+          <span class="highlight-value">{{ tutor.name }}</span>
+        </p>
+
+        <div class="card-detail">
+          <img src="assets/tutor_email_icon.png" alt="User Icon" class="detail-icon" />
+          <span class="status-value"></span>
+          <span class="status-text">{{ tutor.email }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Blogs Card -->
+    <mat-card class="stats-card vlogs-card wider-card">
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="card-title">
+          Blogging Insights
+          <span class="highlight-value">{{ vlogs.totalBlog }}</span>
+        </p>
+
+        <div class="card-detail">
+          <span class="status-value">{{ vlogs.tutor }}</span>
+          <span class="status-text">Posts by Tutor</span>
+        </div>
+
+        <div class="card-detail">
+          <span class="status-value">{{ vlogs.student }}</span>
+          <span class="status-text">Posts by You</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Meetings Card -->
+    <mat-card class="stats-card meetings-card wider-card">
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="card-title">
+          Scheduled Meetings
+          <span class="highlight-value">{{ meetings.totalMeeting }}</span>
+        </p>
+
+        <div class="card-detail">
+          <span class="status-value">{{ meetings.count_online }}</span>
+          <span class="status-text">Online</span>
+        </div>
+
+        <div class="card-detail">
+          <span class="status-value">{{ meetings.count_campus }}</span>
+          <span class="status-text">Campus</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Reschedule Notifications Section -->
+  <div class="notifications-container">
+    <h3 class="section-title">Meeting Reschedule Notifications</h3>
+
+    <div class="notification-cards-wrapper">
+      <mat-card *ngFor="let meeting of upcomingMeetings" class="reschedule-card wider-notification-card" [ngClass]="{
+          approved: meeting.status === 'approved',
+          pending: meeting.status === 'pending',
+          rejected: meeting.status === 'reject',
+          cancelled: meeting.status === 'cancelled'
+        }">
+        <div class="reschedule-topic">
+          <strong>Topic: {{ meeting.topic }}</strong>
+        </div>
+        <div class="reschedule-details">
+          <div class="reschedule-info">
+            <span class="reschedule-request">
+              Request the meeting schedule time to
+              {{ formatDate(meeting.arrange_date) }} at
+              {{ formatTime(meeting.arrange_date) }}
+              <span class="status-label">
+                - {{ getDisplayStatus(meeting.status) }}</span>
+            </span>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- Show message when no meetings are available -->
+    <div *ngIf="!upcomingMeetings || upcomingMeetings.length === 0" class="empty-state">
+      <p>No upcoming meetings found</p>
+    </div>
+  </div>
+</div>

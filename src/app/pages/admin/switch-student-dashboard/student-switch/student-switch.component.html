@@ -1,0 +1,145 @@
+<h3>
+  Student Name -
+  <span style="color: blue">{{ user.name }}</span>
+</h3>
+
+<!-- Cards Row -->
+<div class="cards-container">
+  <!-- User Card - now shows tutor info -->
+  <mat-card class="stats-card user-card">
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-title">
+        <img src="assets/user_icon.png" alt="User Icon" class="user-icon" />
+        <span class="status-value"></span>
+        <span class="highlight-value">{{ tutor.name }}</span>
+      </p>
+
+      <div class="card-detail">
+        <img
+          src="assets/tutor_email_icon.png"
+          alt="User Icon"
+          class="detail-icon"
+        />
+        <span class="status-value"></span>
+        <span class="status-text">{{ tutor.email }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Documents Card -->
+  <!-- <mat-card class="stats-card documents-card">
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-title">
+        Total Documents
+        <span class="highlight-value">{{ documentsTotal.total }}</span>
+      </p>
+
+      <div class="card-detail">
+        <img
+          src="assets/Ellipse1.svg"
+          alt="Finished Icon"
+          class="detail-icon"
+        />
+        <span class="status-value status-value-finished">{{
+          documentsTotal.status.finished
+        }}</span>
+        <span class="status-text">Finished</span>
+      </div>
+
+      <div class="card-detail">
+        <img src="assets/Ellipse2.svg" alt="Watched Icon" class="detail-icon" />
+        <span class="status-value status-value-watched">{{
+          documentsTotal.status.watched
+        }}</span>
+        <span class="status-text">Watched</span>
+      </div>
+
+      <div class="card-detail">
+        <img
+          src="assets/Ellipse3.svg"
+          alt="Accepted Icon"
+          class="detail-icon"
+        />
+        <span class="status-value status-value-accepted">{{
+          documentsTotal.status.accepted
+        }}</span>
+        <span class="status-text">Accepted</span>
+      </div>
+    </mat-card-content>
+  </mat-card> -->
+
+  <!-- Blogs Card -->
+  <mat-card class="stats-card vlogs-card">
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-title">
+        Blogging Insights
+        <span class="highlight-value">{{ vlogs.totalBlog }}</span>
+      </p>
+
+      <div class="card-detail">
+        <span class="status-value">{{ vlogs.tutor }}</span>
+        <span class="status-text">Posts by Tutor</span>
+      </div>
+
+      <div class="card-detail">
+        <span class="status-value">{{ vlogs.student }}</span>
+        <span class="status-text">Posts by You</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Meetings Card -->
+  <mat-card class="stats-card meetings-card">
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="card-title">
+        Scheduled Meetings
+        <span class="highlight-value">{{ meetings.totalMeeting }}</span>
+      </p>
+
+      <div class="card-detail">
+        <span class="status-value">{{ meetings.count_online }}</span>
+        <span class="status-text">Online</span>
+      </div>
+
+      <div class="card-detail">
+        <span class="status-value">{{ meetings.count_campus }}</span>
+        <span class="status-text">Physical</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Upcoming Meetings Section -->
+<div class="student_display_container container mt-3">
+  <h2 class="table_title">Upcoming Meetings</h2>
+  <mat-card class="upcoming-meetings-card">
+    <mat-card-content class="meetings-card-container">
+      <div *ngFor="let meeting of upcomingMeetings" class="meeting-item">
+        <p class="meeting-topic"><strong>Topic:</strong> {{ meeting.topic }}</p>
+        <p class="meeting-details">
+          {{ meeting.date }} at {{ meeting.time }} -
+          <span
+            [ngClass]="{
+              online: meeting.location === 'Online',
+              campus: meeting.location === 'Campus'
+            }"
+          >
+            {{ meeting.location }}
+          </span>
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

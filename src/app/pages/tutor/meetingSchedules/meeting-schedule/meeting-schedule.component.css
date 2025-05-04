@@ -1,0 +1,364 @@
+.container {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Top bar with Back button and Search bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Back button */
+.back-btn {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  min-width: auto;
+}
+
+/* Search bar */
+.search-bar {
+  margin: 15px auto;
+  width: 80%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px 0;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.new-meeting-btn {
+  background-color: #007bff !important;
+  color: white !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 20px;
+}
+
+.tab-group {
+  width: 100%;
+}
+
+.filter-section {
+  margin: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-form-field {
+  width: 200px;
+}
+
+.filter-form-field ::ng-deep .mat-form-field-wrapper {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white !important;
+}
+
+.filter-form-field ::ng-deep .mat-form-field-flex {
+  padding: 0 8px !important;
+}
+
+.filter-form-field ::ng-deep .mat-form-field-infix {
+  border: none;
+}
+
+.badge {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+.meeting_link {
+  margin-left: 10px;
+  color: #0000ff;
+  text-decoration: underline;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px;
+}
+.card_title {
+  font-size: 25px !important;
+  font-weight: bold !important;
+  margin: 0;
+}
+.meeting-card,
+.document-card,
+.blog-card {
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 80%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.meeting-card h3,
+.document-card h3,
+.blog-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 20px;
+}
+/* Action buttons container */
+.action-buttons {
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* Button styling */
+.finish-btn {
+  background-color: #007bff !important;
+  color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  width: 150px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between; /* Finish on the left, secondary buttons on the right */
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* Secondary buttons container */
+.secondary-buttons {
+  display: flex;
+  gap: 8px;
+}
+.meeting-record-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.meeting-record-section h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.file-section {
+  margin-top: 10px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.file-item span {
+  flex: 1;
+}
+
+.download-btn {
+  background-color: #007bff !important;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  text-transform: none;
+  margin-left: 10px;
+}
+
+.download-btn mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  line-height: 18px;
+}
+
+.record-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-btn {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.delete-btn {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* Skeleton Styles */
+.skeleton-filter {
+  margin-bottom: 16px;
+}
+
+.skeleton-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.skeleton-tab {
+  display: flex;
+  gap: 8px;
+}
+
+.skeleton-text {
+  height: 16px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-text.medium {
+  width: 200px; /* Approximate width of the filter dropdown */
+}
+
+.skeleton-text.short {
+  width: 80px; /* Approximate width of a tab label */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Adjust Skeleton Card to Match Meeting Card */
+:host ::ng-deep .skeleton-card {
+  width: 100%;
+  max-width: 600px; /* Match the width of your meeting cards */
+  margin: 0 auto 16px auto; /* Center and add spacing */
+}
+
+/* Responsive adjustments */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .new-meeting-btn {
+    width: 100%;
+  }
+
+  .filter-section {
+    justify-content: flex-start;
+  }
+
+  .filter-form-field {
+    width: 100%;
+  }
+
+  .meeting-card,
+  .document-card,
+  .blog-card {
+    flex: 1 1 calc(50% - 16px); /* 2 cards per row */
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .finish-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  /* Adjust tab labels for smaller screens */
+  .tab-group ::ng-deep .mat-tab-label {
+    font-size: 14px;
+    padding: 0 12px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .meeting-card,
+  .document-card,
+  .blog-card {
+    flex: 1 1 100%; /* 1 card per row */
+    min-width: 100%;
+  }
+
+  .filter-form-field {
+    width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .finish-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  /* Further adjust tab labels for mobile */
+  .tab-group ::ng-deep .mat-tab-label {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  /* Ensure tabs are scrollable on mobile */
+  .tab-group ::ng-deep .mat-tab-labels {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="report-container">
+  <!-- Bar Chart for Messages in the Last 7 Days -->
+  <div class="chart-container">
+    <h3>Number of messages in the last 7 days</h3>
+    <canvas *ngIf="!isLoading" #messagesChart id="messagesChart"></canvas>
+
+    <app-skeleton
+      *ngIf="isLoading"
+      type="bar-chart"
+      [rows]="7"
+      [columns]="1"
+    ></app-skeleton>
+  </div>
+
+  <!-- Search Bar and Table Header -->
+  <app-table
+    title="Inactive Students"
+    [columns]="studentColumns"
+    [data]="students"
+    [showSearch]="true"
+    [showFilter]="true"
+    [filterOptions]="studentFilterOptions"
+    [pageSize]="pageSize"
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    [isLoading]="isLoading"
+    (pageChange)="onPageChange($event)"
+  ></app-table>
+</div>

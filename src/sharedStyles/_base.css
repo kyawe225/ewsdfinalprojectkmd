@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  font-family: Inter;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #4caf50;
+    cursor: pointer;
+  }
+}
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+.logo {
+  font-size: 24px;
+}
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 85%;
+    margin: auto;
+  }
+  .logo {
+    font-size: 18px;
+  }
+}
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,52 @@
+<div class="reallocation-container">
+  <!-- Dark header as in second image -->
+  <div class="dialog-header">REALLOCATION FORM</div>
+  
+  <div class="reallocation-card">
+    <form [formGroup]="reallocationForm">
+      <div class="form-grid">
+        <!-- Student Name -->
+        <mat-form-field appearance="fill">
+          <mat-label>Student Name</mat-label>
+          <input matInput formControlName="studentName" readonly>
+        </mat-form-field>
+
+        <!-- Current Tutor -->
+        <mat-form-field appearance="fill">
+          <mat-label>Current Tutor</mat-label>
+          <input matInput formControlName="currentTutor" readonly>
+        </mat-form-field>
+
+        <!-- New Tutor Name -->
+        <mat-form-field appearance="fill" class="new-tutor-select">
+          <mat-label>New Tutor Name</mat-label>
+          <mat-select formControlName="newTutor" required>
+            <mat-option *ngFor="let tutor of tutors" [value]="tutor.id">
+              {{tutor.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- Reallocation Date -->
+        <mat-form-field appearance="fill">
+          <mat-label>Reallocation Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="reallocationDate" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Reallocation Reason -->
+        <mat-form-field appearance="fill">
+          <mat-label>Reallocation Reason</mat-label>
+          <textarea matInput formControlName="reason" placeholder="Enter Reason Here" rows="3"></textarea>
+        </mat-form-field>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="form-buttons">
+        <button mat-button type="button" class="cancel-btn" (click)="closeDialog()">Cancel</button>
+        <button mat-button type="button" class="submit-btn" [disabled]="!reallocationForm.valid" (click)="submitReallocation()">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

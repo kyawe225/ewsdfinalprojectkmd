@@ -1,0 +1,230 @@
+/* Responsive Reallocation Form */
+.reallocation-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.reallocation-card {
+  padding: 8px 16px;
+}
+
+h2 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Form layout with minimal or no gap between fields */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Remove gap completely between form fields */
+  width: 100%;
+}
+
+/* Form column */
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Field styling - reduce bottom margin */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0; /* Remove padding at the bottom */
+}
+
+/* Remove extra margin from mat-form-field inner elements */
+::ng-deep .mat-form-field-infix {
+  padding: 0.5em 0 !important;
+  border-top: 0.25em solid transparent !important;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0.5em 0.75em 0 0.75em !important;
+}
+
+/* Remove fixed heights that cause display issues */
+input, textarea, mat-select {
+  font-size: 16px;
+}
+
+/* Action buttons - move closer to the form fields */
+.form-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 16px; /* Space between buttons */
+  margin-top: 12px; /* Reduce top margin from 24px to 12px */
+  width: 100%;
+}
+
+/* Button styling - equal width */
+button.mat-button, button.mat-raised-button {
+  min-width: 120px; /* Set minimum width */
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 0 16px;
+}
+
+button.mat-button.submit-btn {
+  background-color: #007BFF;
+  color: #FFFFFF;
+}
+
+button.mat-button.cancel-btn {
+  background-color: transparent;
+  color: #007BFF;
+  border: 1px solid #007BFF;
+}
+
+/* Adjust dialog container */
+::ng-deep .mat-dialog-container {
+  max-height: 85vh !important; /* Make dialog shorter */
+  padding: 0 !important;
+  overflow-y: auto !important;
+  display: block !important;
+  border-radius: 8px;
+  width: 100% !important;
+  max-width: 500px !important; /* Limit width on larger screens */
+}
+
+/* Divider */
+.horizontal-line {
+  background-color: #e0e0e0;
+  height: 1px;
+  width: 100%;
+  margin: 12px 0;
+}
+
+/* New Tutor dropdown styling */
+.new-tutor-select {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #F3F4F6;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Make the dialog header more prominent with increased height */
+.dialog-header {
+  background-color: #333;
+  color: white;
+  padding: 16px 16px; /* Increase padding for more height */
+  font-weight: 600; /* Make font bolder */
+  font-size: 18px; /* Increase font size */
+  text-transform: uppercase;
+  margin: -16px -16px 8px -16px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Set specific height */
+  letter-spacing: 1px; /* Add letter spacing for emphasis */
+}
+
+/* Date picker icon */
+.mat-datepicker-toggle {
+  color: #666;
+}
+
+/* Tablet and small desktop optimizations */
+@media screen and (max-width: 768px) {
+  ::ng-deep .mat-dialog-container {
+    max-width: 90vw !important;
+  }
+  
+  .reallocation-container {
+    padding: 12px;
+  }
+  
+  button.mat-button, button.mat-raised-button {
+    font-size: 13px;
+  }
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 480px) {
+  .reallocation-container {
+    padding: 8px;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+  
+  button.mat-button, button.mat-raised-button {
+    width: 100%;
+    margin: 4px 0;
+  }
+  
+  ::ng-deep .mat-dialog-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    max-width: 100vw !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Make text inputs larger for better touch targets on mobile */
+  input, textarea, mat-select {
+    font-size: 16px;
+    height: 40px;
+  }
+  
+  textarea {
+    height: auto;
+    min-height: 80px;
+  }
+  
+  /* Reduce padding for mobile */
+  .reallocation-card {
+    padding: 12px;
+  }
+  
+  /* Ensure the header always sticks to the top on mobile */
+  .dialog-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  /* Make error messages more visible on mobile */
+  ::ng-deep .mat-error {
+    font-size: 12px;
+    padding-top: 4px;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 360px) {
+  .dialog-header {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  h2 {
+    font-size: 16px;
+  }
+  
+  .reallocation-container {
+    padding: 4px;
+  }
+  
+  .reallocation-card {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,295 @@
+/* admin-dashboard.component.css */
+.dashboard-container {
+  padding: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.full-width {
+  width: 100%;
+  max-width: 20rem; /* Adjusted for smaller screens */
+  margin-bottom: 1.5rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  text-align: center;
+  padding: 1.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-height: 100px; /* Ensure consistent height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-card {
+  padding: 1.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.bar-chart .bar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.bar-chart .bar-item span:first-child {
+  flex: 0 0 8rem; /* Adjusted for responsiveness */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-chart .bar {
+  flex: 1;
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-chart .fill {
+  height: 100%;
+  background-color: #3f51b5;
+  transition: width 0.3s ease-in-out;
+}
+
+.bar-chart .bar-item span:last-child {
+  flex: 0 0 3rem;
+  text-align: right;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* Maintain aspect ratio */
+  display: block;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 250px;
+}
+
+.mt-5 {
+  margin-top: 1.5rem;
+}
+
+/* User Profile Section */
+.user-profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.user-profile-section h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 0;
+}
+
+.profile_contaienr {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 1rem;
+}
+
+.text-muted {
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+/* Skeleton Loading Styles */
+.skeleton-text {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Cards Skeleton */
+.skeleton-card .skeleton-text {
+  height: 1.25rem;
+  width: 60%;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-card .skeleton-number {
+  height: 1.875rem;
+  width: 40%;
+}
+
+/* Bar Chart Skeleton */
+.skeleton-bar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.skeleton-name {
+  flex: 0 0 8rem;
+  height: 1rem;
+}
+
+.skeleton-bar {
+  flex: 1;
+  height: 1rem;
+  margin: 0 0.5rem;
+}
+
+.skeleton-percentage {
+  flex: 0 0 2.5rem;
+  height: 1rem;
+}
+
+/* Pie Chart Skeleton */
+.skeleton-chart {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Table Skeleton */
+.skeleton-title {
+  width: 12.5rem;
+  height: 1.25rem;
+}
+
+.table th.skeleton-text,
+.table td.skeleton-text {
+  height: 1rem;
+  width: 100%;
+}
+
+.chart-error {
+  color: #f44336;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0.75rem;
+  }
+
+  .full-width {
+    max-width: 100%;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .user-profile-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text-muted {
+    text-align: left;
+  }
+
+  .bar-chart .bar-item span:first-child {
+    flex: 0 0 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.5rem;
+  }
+
+  .card,
+  .chart-card {
+    padding: 0.75rem;
+  }
+
+  .user-profile-section h1 {
+    font-size: 1.25rem;
+  }
+
+  .user-avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .username {
+    font-size: 0.875rem;
+  }
+
+  .bar-chart .bar-item span:first-child {
+    flex: 0 0 5rem;
+  }
+
+  .chart-container {
+    aspect-ratio: 1 / 1;
+  }
+
+  .skeleton-chart {
+    aspect-ratio: 1 / 1;
+  }
+}
