@@ -39,7 +39,7 @@ class MeetingRequestApproveMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.email.meetingrequest_approved_notification',
+            view: 'email.meetingrequest_approved_notification',
             with: [
                 'TUTOR_EMAIL'=>$this->tutor->email,
                 'STUDENT_EMAIL'=>$this->student->email,

@@ -39,7 +39,7 @@ class InactiveStudentEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.email.inactive_student',
+            view: 'email.inactive_student',
             with: [
                 'user_name'=> $this->student->name,
                 'tutoring_system_name' => config("APP_NAME"),

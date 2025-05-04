@@ -29,9 +29,10 @@ class MeetingRequestController extends Controller
     }
     public function create(int $arrange_id, MeetingStudentRequest $request)
     {
-        if ((!auth()->user()->hasAnyRole('student'))) {
-            return response()->json(ResponseModel::Failed(null, "", "failed", ));
-        }
+        // dd(auth()->user()->roles()->get());
+        // if ((!auth()->user()->hasAnyRole('student'))) {
+        //     return response()->json(ResponseModel::Failed(null, "", "failed", ));
+        // }
         $meeting_detail = MeetingDetail::where('arrange_id', $arrange_id)->where('status', 'pending')->first();
         $validated = $request->safe();
         $student_id = auth()->user()->id;
@@ -58,6 +59,7 @@ class MeetingRequestController extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
+            dd($e);
         }
 
         return response()->json(ResponseModel::Ok($model, $model->id, "Requested successfully"));

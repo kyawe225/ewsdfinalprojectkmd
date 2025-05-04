@@ -39,7 +39,7 @@ class MeetingCancelMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.email.meeting_cancelled_notification',
+            view: 'email.meeting_cancelled_notification',
             with: [
                 'TUTOR_EMAIL'=>$this->tutor->email,
                 'STUDENT_EMAIL'=>$this->student->email,
